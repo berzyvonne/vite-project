@@ -6,21 +6,15 @@ import {puppyList} from './data.js'
 
 function App() {
   const [count, setCount] = useState(0)
-console.log(puppies)
-const [puppies, setPuppies] = useState(puppyList)
+  const [puppies, setPuppies] = useState(puppyList)
+  console.log(puppies)
+
   return (
     <>
       <div>
-        {
-        puppies.map((puppy) => {
-          return <p>{puppy.name}</p>
-        })
-        /* <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {puppies.map((puppy) => {
+          return <p key={puppy.id}>{puppy.name}</p>; // Added key prop for each item in the map
+        })}
       </div>
       <h1>Vite + React</h1>
       <div className="card">
@@ -33,9 +27,9 @@ const [puppies, setPuppies] = useState(puppyList)
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p> */}
+      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
